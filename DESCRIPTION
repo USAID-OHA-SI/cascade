@@ -35,3 +35,5 @@ Remotes:
   USAID-OHA-SI/glitr,
   USAID-OHA-SI/gophr
 VignetteBuilder: knitr
+URL: https://github.com/USAID-OHA-SI/cascade
+BugReports: https://github.com/USAID-OHA-SI/cascade/issues

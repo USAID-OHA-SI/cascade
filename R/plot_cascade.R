@@ -96,13 +96,13 @@ plot_cascade <- function(.data, df_annot, cscd_num, p_title) {
       data = df_annot %>%
         dplyr::filter(indicator == "HTS_TST"),
       aes(
-        y = results_cumulative.y,
+        y = (targets.y*.5),
         label = paste(
           "Tests needed for\none positive:",
           scales::comma(results_cumulative.x),
-          "\n(Positivity rate:",
+          "\nPositivity rate:",
           scales::percent(1 / results_cumulative.x),
-          ")"
+          ""
         ),
         x = indicator,
         fill = targets_color
@@ -110,14 +110,15 @@ plot_cascade <- function(.data, df_annot, cscd_num, p_title) {
       size = 12 / .pt,
       family = font_annot,
       hjust = 0,
-      vjust = -1,
+      vjust = 0,
+      position = position_nudge(x = 0.5),
       color = results_color
     ) +
     ggplot2::geom_text(
       data = df_annot %>%
         dplyr::filter(indicator == "TX_NEW"),
       aes(
-        y = results_cumulative.y,
+        y = (targets.y*.90),
         label = paste(
           "Linkage:",
           scales::percent(results_cumulative.x)
@@ -128,7 +129,7 @@ plot_cascade <- function(.data, df_annot, cscd_num, p_title) {
       size = 12 / .pt,
       family = font_annot,
       hjust = 1,
-      vjust = -10,
+      vjust = 0,
       color = results_color
     ) +
     ggplot2::geom_text(

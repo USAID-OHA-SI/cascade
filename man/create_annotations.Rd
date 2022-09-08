@@ -4,10 +4,10 @@
 \alias{create_annotations}
 \title{Create Plot Annotations}
 \usage{
-create_annotations(.data, cscd_df)
+create_annotations(df, cscd_df)
 }
 \arguments{
-\item{.data}{munged data frame resulting from \code{return_cascade_plot}}
+\item{df}{munged data frame resulting from \code{return_cascade_plot}}
 
 \item{cscd_df}{cascade value from the \code{return_cascade_plot}}
 }

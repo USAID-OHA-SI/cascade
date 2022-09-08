@@ -72,6 +72,7 @@ return_cascade_plot <- function(msd_df, export = TRUE, path = "Images") {
   if(export == TRUE){
     p_title <- gsub(" ", "_", p_title)
     glitr::si_save(glue::glue("{path}/{p_title}_cascade.png") %>% stringr::str_to_lower(.), p, scale = 1.25)
+    return(p)
   } else {
     return(p)
   }

@@ -1,17 +1,17 @@
 #' Create Plot Annotations
 #'
-#' @param .data munged data frame resulting from `return_cascade_plot`
+#' @param df munged data frame resulting from `return_cascade_plot`
 #' @param cscd_df cascade value from the `return_cascade_plot`
 #'
 #' @return a data frame of annotated values
 #' @export
 #'
 
-create_annotations <- function(.data, cscd_df) {
+create_annotations <- function(df, cscd_df) {
   where <- utils::globalVariables("where")
 
   annot_df <-
-    .data %>%
+    df %>%
     dplyr::select(-results, -funding_agency) %>%
     dplyr::filter(period == curr_pd) %>%
     tidyr::pivot_longer(where(is.double),
