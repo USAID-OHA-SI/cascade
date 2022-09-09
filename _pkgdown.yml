@@ -1,0 +1,67 @@
+navbar:
+  structure:
+    left:
+    - intro
+    - reference
+    - articles
+    - tutorials
+    - news
+    right: github
+  components:
+    home:
+      icon: fas fa-home fa-lg
+      href: index.html
+    reference:
+      text: Reference
+      href: reference/index.html
+    news:
+      text: Changelog
+      href: news/index.html
+    github:
+      icon: fab fa-github fa-lg
+      href: https://github.com/USAID-OHA-SI/cascade/
+      aria-label: github
+
+reference:
+- title: Cascade functions
+  contents:
+  - '`batch_cascade_plot`'
+  - '`batch_plot`'
+  - '`return_cascade`'
+  - '`return_cascade_plot`'
+  - '`plot_cascade`'
+
+- title: Helper functions
+  contents:
+  - '`assign_cscd_colors`'
+  - '`assign_mods_colors`'
+  - '`create_annotations`'
+  - '`file_fy`'
+  - '`file_pd`'
+  - '`file_source`'
+  - '`fltr_ayp`'
+  - '`fltr_cascade`'
+  - '`fltr_disag`'
+  - '`fltr_sex`'
+  - '`font_annot`'
+  - '`font_fam`'
+  - '`footer_meta`'
+  - '`get_file_metadata`'
+  - '`plot_name`'
+  - '`plot_title`'
+  - '`results_color`'
+  - '`sum_reshape`'
+  - '`targets_color`'
+  - '`youth_wrapper`'
+
+- title: Cascade data
+  contents:
+  - '`disag_kp`'
+  - '`disag_mods`'
+  - '`disag_peds`'
+  - '`keep_ind`'
+
+
+
+
+
