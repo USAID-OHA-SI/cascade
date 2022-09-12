@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_msd_meta.R
 \name{get_file_metadata}
 \alias{get_file_metadata}
-\title{Title}
+\title{Stores all metadata objects to Global Environment}
 \usage{
 get_file_metadata(file_path)
 }
@@ -13,5 +13,12 @@ get_file_metadata(file_path)
 global objects
 }
 \description{
-Title
+Stores all metadata objects to Global Environment
+}
+\examples{
+\dontrun{
+merdata <- file.path(glamr::si_path("path_msd"))
+file_path <- return_latest(folderpath = merdata, pattern = "Zambia-Daily-2022-08-15")
+get_file_metadata(file_path)}
+
 }

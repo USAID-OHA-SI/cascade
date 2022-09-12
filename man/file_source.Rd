@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_msd_meta.R
 \name{file_source}
 \alias{file_source}
-\title{Title}
+\title{Returns source of msd}
 \usage{
 file_source(file_path)
 }
@@ -13,5 +13,5 @@ file_source(file_path)
 object with msd source
 }
 \description{
-Title
+Returns source of msd
 }

@@ -2,8 +2,7 @@
 % Please edit documentation in R/return_cascade.R
 \name{return_cascade}
 \alias{return_cascade}
-\title{Fetches the correct version of the data from each cascade option
-Returns a data frame of cascade indicators for a given population}
+\title{Returns a munged data frame of cascade data.}
 \usage{
 return_cascade(df, cscd_num)
 }
@@ -16,6 +15,6 @@ return_cascade(df, cscd_num)
 a data frame of cascade indicators
 }
 \description{
-Fetches the correct version of the data from each cascade option
+Fetches the correct version of the data from each cascade option.
 Returns a data frame of cascade indicators for a given population
 }

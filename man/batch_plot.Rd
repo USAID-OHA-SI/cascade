@@ -2,7 +2,9 @@
 % Please edit documentation in R/batch_cascade.R
 \name{batch_plot}
 \alias{batch_plot}
-\title{Title}
+\title{Batch plot
+Helped function that is used in the \code{batch_cascade_plot}. Takes a data frame,
+cascade number, plot file type, and image path. Returns a ggplot2 object.}
 \usage{
 batch_plot(
   msd_df,
@@ -27,7 +29,9 @@ batch_plot(
 a ggplot2 object
 }
 \description{
-Title
+Batch plot
+Helped function that is used in the \code{batch_cascade_plot}. Takes a data frame,
+cascade number, plot file type, and image path. Returns a ggplot2 object.
 }
 \examples{
 \dontrun{

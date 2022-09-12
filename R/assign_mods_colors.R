@@ -1,4 +1,4 @@
-#' Title
+#' Assign index cascade colors (WIP)
 #'
 #' @param .data an msd based dataframe
 #'

@@ -1,5 +1,5 @@
 
-#' Title
+#' Returns source of msd
 #'
 #' @param file_path path where msd lives
 #'
@@ -11,7 +11,7 @@ file_source <- function(file_path){
   return(msd_source)
 }
 
-#' Title
+#' Returns period information from file path of msd
 #'
 #' @param file_path path where msd lives
 #'
@@ -24,7 +24,7 @@ file_pd <- function(file_path){
   return(curr_pd)
 }
 
-#' Title
+#' Returns fiscal year information for file path of msd
 #'
 #' @param file_path path where msd lives
 #'
@@ -37,7 +37,7 @@ file_fy <- function(file_path){
   return(curr_fy)
 }
 
-#' Title
+#' Returns ggplot caption information for file path of msd
 #'
 #' @param file_path path where msd lives
 #'
@@ -51,7 +51,7 @@ footer_meta <- function(file_path){
 }
 
 
-#' Title
+#' Stores all metadata objects to Global Environment
 #'
 #' @param file_path path where msd lives
 #'
@@ -59,6 +59,11 @@ footer_meta <- function(file_path){
 #' @export
 #'
 #' @examples
+#' \dontrun{
+#'merdata <- file.path(glamr::si_path("path_msd"))
+#'file_path <- return_latest(folderpath = merdata, pattern = "Zambia-Daily-2022-08-15")
+#'get_file_metadata(file_path)}
+#'
 get_file_metadata <- function(file_path){
   file_source(file_path)
   file_pd(file_path)

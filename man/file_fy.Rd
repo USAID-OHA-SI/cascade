@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_msd_meta.R
 \name{file_fy}
 \alias{file_fy}
-\title{Title}
+\title{Returns fiscal year information for file path of msd}
 \usage{
 file_fy(file_path)
 }
@@ -13,5 +13,5 @@ file_fy(file_path)
 current fiscal year used as a filter
 }
 \description{
-Title
+Returns fiscal year information for file path of msd
 }

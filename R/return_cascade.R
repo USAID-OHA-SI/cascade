@@ -1,4 +1,6 @@
-#' Fetches the correct version of the data from each cascade option
+#' Returns a munged data frame of cascade data.
+#'
+#' Fetches the correct version of the data from each cascade option.
 #' Returns a data frame of cascade indicators for a given population
 #'
 #' @param df MER structured data set for a given population and geography

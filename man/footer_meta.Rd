@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_msd_meta.R
 \name{footer_meta}
 \alias{footer_meta}
-\title{Title}
+\title{Returns ggplot caption information for file path of msd}
 \usage{
 footer_meta(file_path)
 }
@@ -13,5 +13,5 @@ footer_meta(file_path)
 caption to be used in footnote
 }
 \description{
-Title
+Returns ggplot caption information for file path of msd
 }

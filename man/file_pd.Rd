@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_msd_meta.R
 \name{file_pd}
 \alias{file_pd}
-\title{Title}
+\title{Returns period information from file path of msd}
 \usage{
 file_pd(file_path)
 }
@@ -13,5 +13,5 @@ file_pd(file_path)
 current period used as a filter
 }
 \description{
-Title
+Returns period information from file path of msd
 }
