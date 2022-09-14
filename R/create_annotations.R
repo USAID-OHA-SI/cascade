@@ -8,7 +8,6 @@
 #'
 
 create_annotations <- function(df, cscd_df) {
-  where <- utils::globalVariables("where")
 
   annot_df <-
     df %>%
