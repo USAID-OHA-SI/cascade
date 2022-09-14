@@ -63,39 +63,50 @@ cascade number, plot file type, and image path. Returns a ggplot2 object.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">batch_plot</span><span class="op">(</span>
-  <span class="va">msd_df</span>,
-  <span class="va">cscd_num</span>,
-  export <span class="op">=</span> <span class="cn">TRUE</span>,
-  imgtype <span class="op">=</span> <span class="st">".png"</span>,
-  imgpath <span class="op">=</span> <span class="st">"Images"</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">batch_plot</span><span class="op">(</span></span>
+<span>  <span class="va">msd_df</span>,</span>
+<span>  <span class="va">cscd_num</span>,</span>
+<span>  export <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  imgtype <span class="op">=</span> <span class="st">".png"</span>,</span>
+<span>  imgpath <span class="op">=</span> <span class="st">"Images"</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>msd_df</dt>
 <dd><p>msd based data frame to be passed through cascade call</p></dd>
+
+
 <dt>cscd_num</dt>
 <dd><p>number from the cascade plot see <code>plot_name</code> for a crosswalk</p></dd>
+
+
 <dt>export</dt>
 <dd><p>logical to control saving of plot, TRUE by default</p></dd>
+
+
 <dt>imgtype</dt>
 <dd><p>type of image to save (default = .png, .svg, .jpeg,)</p></dd>
+
+
 <dt>imgpath</dt>
 <dd><p>path where images are saved ("Images" set as default)</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>a ggplot2 object</p>
+    
+
+<p>a ggplot2 object</p>
     </div>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in"><span class="va">plt</span> <span class="op">&lt;-</span> <span class="fu">batch_plot</span><span class="op">(</span><span class="va">df_sub</span>, cscd_num <span class="op">=</span> <span class="fl">1</span>, export <span class="op">=</span> <span class="cn">T</span>, imgtype <span class="op">=</span> <span class="st">".png"</span>, imgpath <span class="op">=</span> <span class="st">"Images"</span><span class="op">)</span><span class="op">}</span></span>
-<span class="r-in"></span>
-<span class="r-in"></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span><span class="va">plt</span> <span class="op">&lt;-</span> <span class="fu">batch_plot</span><span class="op">(</span><span class="va">df_sub</span>, cscd_num <span class="op">=</span> <span class="fl">1</span>, export <span class="op">=</span> <span class="cn">T</span>, imgtype <span class="op">=</span> <span class="st">".png"</span>, imgpath <span class="op">=</span> <span class="st">"Images"</span><span class="op">)</span><span class="op">}</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -110,7 +121,7 @@ cascade number, plot file type, and image path. Returns a ggplot2 object.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>
