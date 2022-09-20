@@ -1,114 +1,114 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>/404.html</loc>
+    <loc>https://usaid-oha-si.github.io/cascade/404.html</loc>
   </url>
   <url>
-    <loc>/authors.html</loc>
+    <loc>https://usaid-oha-si.github.io/cascade/authors.html</loc>
   </url>
   <url>
-    <loc>/index.html</loc>
+    <loc>https://usaid-oha-si.github.io/cascade/index.html</loc>
   </url>
   <url>
-    <loc>/LICENSE-text.html</loc>
+    <loc>https://usaid-oha-si.github.io/cascade/LICENSE-text.html</loc>
   </url>
   <url>
-    <loc>/LICENSE.html</loc>
+    <loc>https://usaid-oha-si.github.io/cascade/LICENSE.html</loc>
   </url>
   <url>
-    <loc>/news/index.html</loc>
+    <loc>https://usaid-oha-si.github.io/cascade/news/index.html</loc>
   </url>
   <url>
-    <loc>/reference/assign_cscd_colors.html</loc>
+    <loc>https://usaid-oha-si.github.io/cascade/reference/assign_cscd_colors.html</loc>
   </url>
   <url>
-    <loc>/reference/assign_mods_colors.html</loc>
+    <loc>https://usaid-oha-si.github.io/cascade/reference/assign_mods_colors.html</loc>
   </url>
   <url>
-    <loc>/reference/batch_cascade_plot.html</loc>
+    <loc>https://usaid-oha-si.github.io/cascade/reference/batch_cascade_plot.html</loc>
   </url>
   <url>
-    <loc>/reference/batch_plot.html</loc>
+    <loc>https://usaid-oha-si.github.io/cascade/reference/batch_plot.html</loc>
   </url>
   <url>
-    <loc>/reference/create_annotations.html</loc>
+    <loc>https://usaid-oha-si.github.io/cascade/reference/create_annotations.html</loc>
   </url>
   <url>
-    <loc>/reference/disag_kp.html</loc>
+    <loc>https://usaid-oha-si.github.io/cascade/reference/disag_kp.html</loc>
   </url>
   <url>
-    <loc>/reference/disag_mods.html</loc>
+    <loc>https://usaid-oha-si.github.io/cascade/reference/disag_mods.html</loc>
   </url>
   <url>
-    <loc>/reference/disag_peds.html</loc>
+    <loc>https://usaid-oha-si.github.io/cascade/reference/disag_peds.html</loc>
   </url>
   <url>
-    <loc>/reference/file_fy.html</loc>
+    <loc>https://usaid-oha-si.github.io/cascade/reference/file_fy.html</loc>
   </url>
   <url>
-    <loc>/reference/file_pd.html</loc>
+    <loc>https://usaid-oha-si.github.io/cascade/reference/file_pd.html</loc>
   </url>
   <url>
-    <loc>/reference/file_source.html</loc>
+    <loc>https://usaid-oha-si.github.io/cascade/reference/file_source.html</loc>
   </url>
   <url>
-    <loc>/reference/fltr_ayp.html</loc>
+    <loc>https://usaid-oha-si.github.io/cascade/reference/fltr_ayp.html</loc>
   </url>
   <url>
-    <loc>/reference/fltr_cascade.html</loc>
+    <loc>https://usaid-oha-si.github.io/cascade/reference/fltr_cascade.html</loc>
   </url>
   <url>
-    <loc>/reference/fltr_disag.html</loc>
+    <loc>https://usaid-oha-si.github.io/cascade/reference/fltr_disag.html</loc>
   </url>
   <url>
-    <loc>/reference/fltr_sex.html</loc>
+    <loc>https://usaid-oha-si.github.io/cascade/reference/fltr_sex.html</loc>
   </url>
   <url>
-    <loc>/reference/font_annot.html</loc>
+    <loc>https://usaid-oha-si.github.io/cascade/reference/font_annot.html</loc>
   </url>
   <url>
-    <loc>/reference/font_fam.html</loc>
+    <loc>https://usaid-oha-si.github.io/cascade/reference/font_fam.html</loc>
   </url>
   <url>
-    <loc>/reference/footer_meta.html</loc>
+    <loc>https://usaid-oha-si.github.io/cascade/reference/footer_meta.html</loc>
   </url>
   <url>
-    <loc>/reference/get_file_metadata.html</loc>
+    <loc>https://usaid-oha-si.github.io/cascade/reference/get_file_metadata.html</loc>
   </url>
   <url>
-    <loc>/reference/index.html</loc>
+    <loc>https://usaid-oha-si.github.io/cascade/reference/index.html</loc>
   </url>
   <url>
-    <loc>/reference/keep_ind.html</loc>
+    <loc>https://usaid-oha-si.github.io/cascade/reference/keep_ind.html</loc>
   </url>
   <url>
-    <loc>/reference/pipe.html</loc>
+    <loc>https://usaid-oha-si.github.io/cascade/reference/pipe.html</loc>
   </url>
   <url>
-    <loc>/reference/plot_cascade.html</loc>
+    <loc>https://usaid-oha-si.github.io/cascade/reference/plot_cascade.html</loc>
   </url>
   <url>
-    <loc>/reference/plot_name.html</loc>
+    <loc>https://usaid-oha-si.github.io/cascade/reference/plot_name.html</loc>
   </url>
   <url>
-    <loc>/reference/plot_title.html</loc>
+    <loc>https://usaid-oha-si.github.io/cascade/reference/plot_title.html</loc>
   </url>
   <url>
-    <loc>/reference/results_color.html</loc>
+    <loc>https://usaid-oha-si.github.io/cascade/reference/results_color.html</loc>
   </url>
   <url>
-    <loc>/reference/return_cascade.html</loc>
+    <loc>https://usaid-oha-si.github.io/cascade/reference/return_cascade.html</loc>
   </url>
   <url>
-    <loc>/reference/return_cascade_plot.html</loc>
+    <loc>https://usaid-oha-si.github.io/cascade/reference/return_cascade_plot.html</loc>
   </url>
   <url>
-    <loc>/reference/sum_reshape.html</loc>
+    <loc>https://usaid-oha-si.github.io/cascade/reference/sum_reshape.html</loc>
   </url>
   <url>
-    <loc>/reference/targets_color.html</loc>
+    <loc>https://usaid-oha-si.github.io/cascade/reference/targets_color.html</loc>
   </url>
   <url>
-    <loc>/reference/youth_wrapper.html</loc>
+    <loc>https://usaid-oha-si.github.io/cascade/reference/youth_wrapper.html</loc>
   </url>
 </urlset>
