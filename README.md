@@ -34,7 +34,7 @@ library(gaglr)
   df <- read_msd(file_path)
 
 # populate all the metadata needed for cascade
-  get_file_metadata(file_path)
+  gophr::get_metadata(file_path)
 
 # Check cascades avaible for creation
   plot_name
