@@ -10,6 +10,14 @@
 #' @export
 #'
 #'
+#' @examples
+#' \dontrun{
+#' # returns standard cascade
+#' return_cascade(df, 1)
+#'
+#' # returns KP cascade
+#' return_cascade(df, 13)
+#' }
 #'
 return_cascade <- function(df, cscd_num) {
 
@@ -76,6 +84,7 @@ return_cascade <- function(df, cscd_num) {
   if (cscd_num == 13) {
     df_cscd <-
       df %>%
+      fltr_cascade() %>%
       fltr_disag(pop_fltr = disag_kp) %>%
       sum_reshape()
   }
@@ -91,12 +100,9 @@ return_cascade <- function(df, cscd_num) {
 
 
 #' Cascade filter
-#'
-#' Filters the cascade variables to current fiscal year and
-#' sets USAID as default funding agency
+#' Filters the cascade variables to current fiscal year
 #'
 #' @param .data MER structured data set
-#' @param agency default is USAID
 #'
 #' @return passed through a filtered cascade data frame
 #' @export
@@ -174,6 +180,7 @@ fltr_sex <- function(.data, m_or_f) {
 #'
 youth_wrapper <- function(.data) {
   .data %>%
+    fltr_cascade() %>%
     fltr_disag(pop_fltr = disag_peds)
 }
 

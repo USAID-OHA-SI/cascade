@@ -178,7 +178,7 @@ plot_cascade <- function(.data, df_annot, cscd_num, p_title) {
       title = glue::glue("{p_title} Cascade- {metadata$curr_pd} RESULTS TO TARGETS (GRAY BARS)") %>%
         toupper(),
       subtitle = glue::glue("{metadata$curr_pd} results listed above colored bar, achievement in box below"),
-      caption = metadata$source
+      caption = metadata$caption
     )
   return(p)
 }
