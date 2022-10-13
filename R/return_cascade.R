@@ -5,18 +5,16 @@
 #'
 #' @param df MER structured data set for a given population and geography
 #' @param cscd_num cascade selection from user
-#' @param USAID logical indicating
 #'
 #' @return a data frame of cascade indicators
 #' @export
 #'
 #'
 #'
-return_cascade <- function(df, cscd_num, USAID = "TRUE") {
+return_cascade <- function(df, cscd_num) {
 
   # For Total Numerator all, female, male
   df_nonkp <- df %>%
-    fltr_cascade(USAID) %>%
     youth_wrapper()
 
   if (cscd_num %in% c(1, 2, 3)) {
@@ -78,7 +76,6 @@ return_cascade <- function(df, cscd_num, USAID = "TRUE") {
   if (cscd_num == 13) {
     df_cscd <-
       df %>%
-      fltr_cascade(USAID) %>%
       fltr_disag(pop_fltr = disag_kp) %>%
       sum_reshape()
   }
@@ -105,20 +102,13 @@ return_cascade <- function(df, cscd_num, USAID = "TRUE") {
 #' @export
 #'
 #'
-fltr_cascade <- function(.data, USAID) {
+fltr_cascade <- function(.data) {
   df <- .data %>%
     dplyr::filter(
       fiscal_year == curr_fy,
       indicator %in% gophr::cascade_ind
     )
-
-  if(USAID == TRUE) {
-    df <- df %>%
-      dplyr::filter(funding_agency == "USAID")
-  }
-
   return(df)
-
 }
 
 
