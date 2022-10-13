@@ -12,7 +12,7 @@ create_annotations <- function(df, cscd_df) {
   annot_df <-
     df %>%
     dplyr::select(-results) %>%
-    dplyr::filter(period == curr_pd) %>%
+    dplyr::filter(period == metadata$curr_pd) %>%
     tidyr::pivot_longer(where(is.double),
       names_to = "period_type"
     ) %>%

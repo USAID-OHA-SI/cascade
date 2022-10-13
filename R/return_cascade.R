@@ -105,7 +105,7 @@ return_cascade <- function(df, cscd_num) {
 fltr_cascade <- function(.data) {
   df <- .data %>%
     dplyr::filter(
-      fiscal_year == curr_fy,
+      fiscal_year == metadata$curr_fy,
       indicator %in% gophr::cascade_ind
     )
   return(df)
