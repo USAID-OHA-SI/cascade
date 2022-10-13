@@ -6,6 +6,7 @@
 #' the plot.
 #'
 #' @param msd_df MSD data frame from either a Genie or Panorama MSD
+#' @param USAID logical indicating if the cascade is for just USAID (default)
 #' @param export exports the plot
 #' @param path the path to where the plot will be saved (Images by default)
 #'
@@ -16,7 +17,7 @@
 #' \dontrun{
 #' return_cascade_plot(df_sub, export = T, path = "Images")}
 #'
-return_cascade_plot <- function(msd_df, export = TRUE, path = "Images") {
+return_cascade_plot <- function(msd_df, USAID, export = TRUE, path = "Images") {
   print(glue::glue_col("{yellow Please enter the cascade you would like to create.}"))
   print(glue::glue_col("{yellow {1:length(plot_name)}:{plot_name}}"))
 
@@ -56,7 +57,7 @@ return_cascade_plot <- function(msd_df, export = TRUE, path = "Images") {
   p_title <- plot_title(cscd_num)
 
   # create cascade dataframe
-  cscd_df <- return_cascade(msd_df, cscd_num)
+  cscd_df <- return_cascade(msd_df, cscd_num, USAID)
 
   # create visualization dataframe
   df_viz <- cscd_df %>%

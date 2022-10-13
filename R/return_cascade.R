@@ -5,19 +5,23 @@
 #'
 #' @param df MER structured data set for a given population and geography
 #' @param cscd_num cascade selection from user
+#' @param USAID logical indicating
 #'
 #' @return a data frame of cascade indicators
 #' @export
 #'
 #'
 #'
-return_cascade <- function(df, cscd_num) {
+return_cascade <- function(df, cscd_num, USAID = "TRUE") {
 
   # For Total Numerator all, female, male
+  df_nonkp <- df %>%
+    fltr_cascade(USAID) %>%
+    youth_wrapper()
+
   if (cscd_num %in% c(1, 2, 3)) {
     df_cscd <-
-      df %>%
-      youth_wrapper() %>%
+      df_nonkp %>%
       {
         if (cscd_num == 2) fltr_sex(., m_or_f = "Female") else .
       } %>%
@@ -30,8 +34,7 @@ return_cascade <- function(df, cscd_num) {
   # Pediatric cascades all, female, male
   if (cscd_num %in% c(4, 5, 6)) {
     df_cscd <-
-      df %>%
-      youth_wrapper() %>%
+      df_nonkp %>%
       {
         if (cscd_num == 5) fltr_sex(., m_or_f = "Female") else .
       } %>%
@@ -45,8 +48,7 @@ return_cascade <- function(df, cscd_num) {
   # AYP cascades all, female, male
   if (cscd_num %in% c(7, 8, 9)) {
     df_cscd <-
-      df %>%
-      youth_wrapper() %>%
+      df_nonkp %>%
       {
         if (cscd_num == 8) fltr_sex(., m_or_f = "Female") else .
       } %>%
@@ -61,8 +63,7 @@ return_cascade <- function(df, cscd_num) {
   # Pediatric cascades all, female, male
   if (cscd_num %in% c(10, 11, 12)) {
     df_cscd <-
-      df %>%
-      youth_wrapper() %>%
+      df_nonkp %>%
       {
         if (cscd_num == 11) fltr_sex(., m_or_f = "Female") else .
       } %>%
@@ -77,7 +78,7 @@ return_cascade <- function(df, cscd_num) {
   if (cscd_num == 13) {
     df_cscd <-
       df %>%
-      fltr_cascade() %>%
+      fltr_cascade(USAID) %>%
       fltr_disag(pop_fltr = disag_kp) %>%
       sum_reshape()
   }
@@ -104,13 +105,20 @@ return_cascade <- function(df, cscd_num) {
 #' @export
 #'
 #'
-fltr_cascade <- function(.data, agency = "USAID") {
-  .data %>%
+fltr_cascade <- function(.data, USAID) {
+  df <- .data %>%
     dplyr::filter(
       fiscal_year == curr_fy,
-      funding_agency == agency,
       indicator %in% gophr::cascade_ind
     )
+
+  if(USAID == TRUE) {
+    df <- df %>%
+      dplyr::filter(funding_agency == "USAID")
+  }
+
+  return(df)
+
 }
 
 
@@ -176,7 +184,6 @@ fltr_sex <- function(.data, m_or_f) {
 #'
 youth_wrapper <- function(.data) {
   .data %>%
-    fltr_cascade() %>%
     fltr_disag(pop_fltr = disag_peds)
 }
 
@@ -197,7 +204,7 @@ youth_wrapper <- function(.data) {
 sum_reshape <- function(.data, ...) {
   .data %>%
     gophr::clean_indicator() %>%
-    dplyr::group_by(funding_agency, indicator, fiscal_year, ...) %>%
+    dplyr::group_by(indicator, fiscal_year, ...) %>%
     dplyr::summarise(dplyr::across(tidyselect::matches("targ|qtr"), sum, na.rm = T)) %>%
     gophr::reshape_msd(direction = "quarters") %>%
     dplyr::ungroup()

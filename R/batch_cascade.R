@@ -6,6 +6,7 @@
 #'
 #' @param msd_df msd based data frame to be passed through cascade call
 #' @param cscd_num number from the cascade plot see `plot_name` for a crosswalk
+#' @param USAID logical indicating if the cascade is for just USAID (default)
 #' @param export logical to control saving of plot, TRUE by default
 #' @param imgtype type of image to save (default = .png, .svg, .jpeg,)
 #' @param imgpath path where images are saved ("Images" set as default)
@@ -18,7 +19,7 @@
 #' plt <- batch_plot(df_sub, cscd_num = 1, export = T, imgtype = ".png", imgpath = "Images")}
 #'
 #'
-batch_plot <- function(msd_df, cscd_num, export = TRUE, imgtype = ".png", imgpath = "Images"){
+batch_plot <- function(msd_df, cscd_num, USAID, export = TRUE, imgtype = ".png", imgpath = "Images"){
 
   cscd_num <- as.numeric(cscd_num)
 
@@ -33,7 +34,7 @@ batch_plot <- function(msd_df, cscd_num, export = TRUE, imgtype = ".png", imgpat
   p_title <- plot_title(cscd_num)
 
   # create cascade dataframe
-  cscd_df <- return_cascade(msd_df, cscd_num)
+  cscd_df <- return_cascade(msd_df, cscd_num, USAID)
 
   # create visualization dataframe
   df_viz <- cscd_df %>%
@@ -62,6 +63,7 @@ batch_plot <- function(msd_df, cscd_num, export = TRUE, imgtype = ".png", imgpat
 #' returned for USAID only for all cascades.
 #'
 #' @param msd_df msd based data frame
+#' @param USAID logical indicating if the cascade is for just USAID (default)
 #' @param imgtype type of image to save (default = .png, .svg, .jpeg, ...)
 #' @param imgpath path where images are saved ("Images" set as default)
 #'
@@ -72,7 +74,7 @@ batch_plot <- function(msd_df, cscd_num, export = TRUE, imgtype = ".png", imgpat
 #' \dontrun{
 #' plt <- batch_cascade_plot(df_sub, imgtype = ".png", imgpath = "Images")}
 #'
-batch_cascade_plot <- function(msd_df, imgtype = ".png", imgpath = "Images") {
+batch_cascade_plot <- function(msd_df, USAID, imgtype = ".png", imgpath = "Images") {
   cscd_plts <- purrr::map(1:13, ~batch_plot(msd_df, .x,
                                      export = TRUE,
                                      imgtype = imgtype,
