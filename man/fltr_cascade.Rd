@@ -2,19 +2,18 @@
 % Please edit documentation in R/return_cascade.R
 \name{fltr_cascade}
 \alias{fltr_cascade}
-\title{Cascade filter}
+\title{Cascade filter
+Filters the cascade variables to current fiscal year}
 \usage{
-fltr_cascade(.data, agency = "USAID")
+fltr_cascade(.data)
 }
 \arguments{
 \item{.data}{MER structured data set}
-
-\item{agency}{default is USAID}
 }
 \value{
 passed through a filtered cascade data frame
 }
 \description{
-Filters the cascade variables to current fiscal year and
-sets USAID as default funding agency
+Cascade filter
+Filters the cascade variables to current fiscal year
 }

@@ -10,14 +10,24 @@
 #' @export
 #'
 #'
+#' @examples
+#' \dontrun{
+#' # returns standard cascade
+#' return_cascade(df, 1)
+#'
+#' # returns KP cascade
+#' return_cascade(df, 13)
+#' }
 #'
 return_cascade <- function(df, cscd_num) {
 
   # For Total Numerator all, female, male
+  df_nonkp <- df %>%
+    youth_wrapper()
+
   if (cscd_num %in% c(1, 2, 3)) {
     df_cscd <-
-      df %>%
-      youth_wrapper() %>%
+      df_nonkp %>%
       {
         if (cscd_num == 2) fltr_sex(., m_or_f = "Female") else .
       } %>%
@@ -30,8 +40,7 @@ return_cascade <- function(df, cscd_num) {
   # Pediatric cascades all, female, male
   if (cscd_num %in% c(4, 5, 6)) {
     df_cscd <-
-      df %>%
-      youth_wrapper() %>%
+      df_nonkp %>%
       {
         if (cscd_num == 5) fltr_sex(., m_or_f = "Female") else .
       } %>%
@@ -45,8 +54,7 @@ return_cascade <- function(df, cscd_num) {
   # AYP cascades all, female, male
   if (cscd_num %in% c(7, 8, 9)) {
     df_cscd <-
-      df %>%
-      youth_wrapper() %>%
+      df_nonkp %>%
       {
         if (cscd_num == 8) fltr_sex(., m_or_f = "Female") else .
       } %>%
@@ -61,8 +69,7 @@ return_cascade <- function(df, cscd_num) {
   # Pediatric cascades all, female, male
   if (cscd_num %in% c(10, 11, 12)) {
     df_cscd <-
-      df %>%
-      youth_wrapper() %>%
+      df_nonkp %>%
       {
         if (cscd_num == 11) fltr_sex(., m_or_f = "Female") else .
       } %>%
@@ -93,24 +100,21 @@ return_cascade <- function(df, cscd_num) {
 
 
 #' Cascade filter
-#'
-#' Filters the cascade variables to current fiscal year and
-#' sets USAID as default funding agency
+#' Filters the cascade variables to current fiscal year
 #'
 #' @param .data MER structured data set
-#' @param agency default is USAID
 #'
 #' @return passed through a filtered cascade data frame
 #' @export
 #'
 #'
-fltr_cascade <- function(.data, agency = "USAID") {
-  .data %>%
+fltr_cascade <- function(.data) {
+  df <- .data %>%
     dplyr::filter(
-      fiscal_year == curr_fy,
-      funding_agency == agency,
+      fiscal_year == metadata$curr_fy,
       indicator %in% gophr::cascade_ind
     )
+  return(df)
 }
 
 
@@ -197,7 +201,7 @@ youth_wrapper <- function(.data) {
 sum_reshape <- function(.data, ...) {
   .data %>%
     gophr::clean_indicator() %>%
-    dplyr::group_by(funding_agency, indicator, fiscal_year, ...) %>%
+    dplyr::group_by(indicator, fiscal_year, ...) %>%
     dplyr::summarise(dplyr::across(tidyselect::matches("targ|qtr"), sum, na.rm = T)) %>%
     gophr::reshape_msd(direction = "quarters") %>%
     dplyr::ungroup()

@@ -73,10 +73,11 @@ batch_plot <- function(msd_df, cscd_num, export = TRUE, imgtype = ".png", imgpat
 #' plt <- batch_cascade_plot(df_sub, imgtype = ".png", imgpath = "Images")}
 #'
 batch_cascade_plot <- function(msd_df, imgtype = ".png", imgpath = "Images") {
-  cscd_plts <- purrr::map(1:13, ~batch_plot(msd_df, .x,
-                                     export = TRUE,
-                                     imgtype = imgtype,
-                                     imgpath = imgpath
+  cscd_plts <- purrr::map(1:13, ~batch_plot(msd_df,
+                                            .x,
+                                            export = TRUE,
+                                            imgtype = imgtype,
+                                            imgpath = imgpath
   ))
   return(cscd_plts)
 }

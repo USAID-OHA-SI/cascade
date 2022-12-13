@@ -24,33 +24,8 @@ return_cascade_plot <- function(msd_df, export = TRUE, path = "Images") {
   cscd_num <- as.numeric(cscd_val)
 
   # Check the value entered is valid, if not return a useful error
-  if (!cscd_val %in% seq(1:length(plot_name))) {
-    stop(glue::glue_col("{cyan Please enter a valid selection between 1 and {length(plot_name)}}"))
-  } else {
-    message(glue::glue_col("{yellow You have selected the {plot_name[cscd_num]} Cascade.}"))
-  }
-
-  if (!exists("data_source")) {
-    stop(
-      usethis::ui_code_block("data_source <-
-                                glamr::source_info(genie_path) %>% glue::glue(., '\nCreated by: USAID OHA SI Team')"),
-      usethis::ui_todo("Run the code chunk above with the appropriate msd_path to set the data source object.")
-    )
-  }
-
-  if (!exists("curr_fy")) {
-    stop(
-      usethis::ui_code_block("curr_fy <- gophr::source_info(genie_path, return = 'fiscal_year')"),
-      usethis::ui_todo("Run the code chunk above with the appropriate msd_path to set the curr_fy.")
-    )
-  }
-
-  if (!exists("curr_pd")) {
-    stop(
-      usethis::ui_code_block("curr_fy <- gophr::source_info(genie_path, return = 'period')"),
-      usethis::ui_todo("Run the code chunk above with the appropriate msd_path to set the curr_pd.")
-    )
-  }
+  check_plot_entry(cscd_val)
+  check_metadata()
 
   # Fetch the plot title
   p_title <- plot_title(cscd_num)

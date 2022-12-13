@@ -18,3 +18,13 @@ a data frame of cascade indicators
 Fetches the correct version of the data from each cascade option.
 Returns a data frame of cascade indicators for a given population
 }
+\examples{
+\dontrun{
+# returns standard cascade
+return_cascade(df, 1)
+
+# returns KP cascade
+return_cascade(df, 13)
+}
+
+}

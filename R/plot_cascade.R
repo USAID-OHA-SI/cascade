@@ -175,10 +175,10 @@ plot_cascade <- function(.data, df_annot, cscd_num, p_title) {
     ggplot2::labs(
       x = NULL,
       y = NULL,
-      title = glue::glue("{p_title} Cascade- {curr_pd} RESULTS TO TARGETS (GRAY BARS)") %>%
+      title = glue::glue("{p_title} Cascade- {metadata$curr_pd} RESULTS TO TARGETS (GRAY BARS)") %>%
         toupper(),
-      subtitle = glue::glue("{curr_pd} results listed above colored bar, achievement in box below"),
-      caption = data_source
+      subtitle = glue::glue("{metadata$curr_pd} results listed above colored bar, achievement in box below"),
+      caption = metadata$caption
     )
   return(p)
 }
