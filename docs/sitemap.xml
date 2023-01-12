@@ -31,6 +31,9 @@
     <loc>https://usaid-oha-si.github.io/cascade/reference/batch_plot.html</loc>
   </url>
   <url>
+    <loc>https://usaid-oha-si.github.io/cascade/reference/bind_tx_curr_lag.html</loc>
+  </url>
+  <url>
     <loc>https://usaid-oha-si.github.io/cascade/reference/check_metadata.html</loc>
   </url>
   <url>
@@ -86,6 +89,9 @@
   </url>
   <url>
     <loc>https://usaid-oha-si.github.io/cascade/reference/keep_ind.html</loc>
+  </url>
+  <url>
+    <loc>https://usaid-oha-si.github.io/cascade/reference/lag_tx_curr.html</loc>
   </url>
   <url>
     <loc>https://usaid-oha-si.github.io/cascade/reference/pipe.html</loc>
