@@ -6,7 +6,6 @@
 #' @return a data frame with assigned colors
 #' @export
 #'
-#' @examples
 assign_cscd_colors <- function(.data) {
   df_cscd_viz <-
     .data %>%
