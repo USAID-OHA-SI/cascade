@@ -40,6 +40,7 @@ reference:
   contents:
   - '`assign_cscd_colors`'
   - '`assign_mods_colors`'
+  - '`bind_tx_curr_lag`'
   - '`create_annotations`'
   - '`check_metadata`'
   - '`check_plot_entry`'
@@ -49,6 +50,7 @@ reference:
   - '`fltr_sex`'
   - '`font_annot`'
   - '`font_fam`'
+  - '`lag_tx_curr`'
   - '`plot_name`'
   - '`plot_title`'
   - '`results_color`'

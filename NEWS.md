@@ -1,3 +1,6 @@
+# cascade 0.1.1
+* Added two behind the scenes functions to deal with removal of `TX_CURR_Lag2` from MSD
+
 # cascade 0.1.0
 
 * Rewired to incorporate `gophr::get_metadata()`
