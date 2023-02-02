@@ -86,7 +86,7 @@ plot_cascade <- function(.data, df_annot, cscd_num, p_title) {
     ) +
     ggplot2::geom_text(
       data = . %>% dplyr::filter(indicator == "HTS_TST"),
-      aes(y = targets, label = "FY22 Targets"),
+      aes(y = targets, label = glue::glue("{metadata$curr_fy_lab} Targets")),
       size = 12 / .pt,
       family = font_fam,
       hjust = 0.4,
@@ -182,3 +182,4 @@ plot_cascade <- function(.data, df_annot, cscd_num, p_title) {
     )
   return(p)
 }
+
