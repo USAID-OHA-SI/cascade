@@ -80,129 +80,29 @@ return_cascade <- function(df, cscd_num) {
       dplyr::filter(trendscoarse == "15+")
   }
 
-  # KP cascade (1 option)
+  # KP cascade (13 option)
   if (cscd_num == 13) {
     df_cscd <-
       df %>%
       fltr_cascade() %>%
       fltr_disag(pop_fltr = disag_kp) %>%
       sum_reshape()
+
   }
 
-  return(df_cscd)
-}
+  tx_df <- lag_tx_curr(df_cscd)
+  df <- bind_tx_curr_lag(df_cscd, tx_df)
 
-
-
-
-
-
-
-
-#' Cascade filter
-#' Filters the cascade variables to current fiscal year
-#'
-#' @param .data MER structured data set
-#'
-#' @return passed through a filtered cascade data frame
-#' @export
-#'
-#'
-fltr_cascade <- function(.data) {
-  df <- .data %>%
-    dplyr::filter(
-      fiscal_year == metadata$curr_fy,
-      indicator %in% gophr::cascade_ind
-    )
   return(df)
 }
 
 
-#' Filter disaggregate
-#'
-#' Filters the MSD to the appropriate population disaggregate
-#'
-#' @param .data  MER structured data set
-#' @param pop_fltr population filter to be applied to disaggregate
-#'
-#' @return passes through a filtered cascade data frame
-#' @export
-#'
-#'
-fltr_disag <- function(.data, pop_fltr) {
-  .data %>%
-    dplyr::filter(standardizeddisaggregate %in% pop_fltr)
-}
-
-
-#
-#' Filter for Adults and Young People
-#'
-#' Filters a whittled down MSD into 15-24 year olds or AYPs.
-#'
-#' @param .data MER structured data set whittled down
-#'
-#' @return passes through a filtered ayp dataframe
-#'
-#
-fltr_ayp <- function(.data) {
-  .data %>%
-    dplyr::mutate(trendscoarse = ifelse(ageasentered %in% c("15-19", "20-24"), "AYP", "Non AYP"))
-}
-
-
-#' Filter sex
-#'
-#' Filters a whittled down MSD into sex categories, male or female.
-#'
-#' @param .data whittled down MSD
-#' @param m_or_f Male or Female filter
-#'
-#' @return passes through a filtered sex data frame
-#'
-#'
-fltr_sex <- function(.data, m_or_f) {
-  .data %>%
-    dplyr::filter(sex %in% m_or_f)
-}
 
 
 
 
-#' Wrapper for youth cascade
-#'
-#' Combines the cascade filter with the peds disag
-#'
-#' @param .data MSD data set
-#'
-#' @return passes through a filtered youth data frame
-#'
-#'
-youth_wrapper <- function(.data) {
-  .data %>%
-    fltr_cascade() %>%
-    fltr_disag(pop_fltr = disag_peds)
-}
 
 
 
-#' Aggregate targets and results
-#'
-#' Takes a whittled down MSD and cleans the indicators,
-#' summarizes the targets and results, and reshapes everything
-#' into a long data set with quarters and cumulative results.
-#'
-#' @param .data MSD data set
-#' @param ... additional parameters to pass to `group_by`
-#'
-#' @return passes through a reshaped data frame
-#'
-#'
-sum_reshape <- function(.data, ...) {
-  .data %>%
-    gophr::clean_indicator() %>%
-    dplyr::group_by(indicator, fiscal_year, ...) %>%
-    dplyr::summarise(dplyr::across(tidyselect::matches("targ|qtr"), sum, na.rm = T)) %>%
-    gophr::reshape_msd(direction = "quarters") %>%
-    dplyr::ungroup()
-}
+
+
