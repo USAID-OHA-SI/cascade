@@ -49,7 +49,7 @@ targets_color <- "#939598"
 #' @importFrom ggplot2 aes .pt position_nudge facet_wrap unit
 #' @return a ggplot2 object
 #'
-plot_cascade <- function(.data, df_annot, cscd_num, p_title) {
+plot_cascade <- function(.data, df_annot, cscd_num, p_title, text_scale = 1) {
 
   pnudge <- 0.1
   p <- .data %>%
@@ -171,7 +171,7 @@ plot_cascade <- function(.data, df_annot, cscd_num, p_title) {
     ggplot2::facet_wrap(~cascade,
                         scales = "free"
     ) +
-    glitr::si_style_ygrid(text_scale = 1.25) +
+    glitr::si_style_ygrid(text_scale = text_scale)
     ggplot2::labs(
       x = NULL,
       y = NULL,
