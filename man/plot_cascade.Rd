@@ -7,7 +7,7 @@
 plots data from the 90-90-90 cascade. Four inputs are required to create
 a valid plot.}
 \usage{
-plot_cascade(.data, df_annot, cscd_num, p_title)
+plot_cascade(.data, df_annot, cscd_num, p_title, text_scale = 1)
 }
 \arguments{
 \item{.data}{dataframe that is the result of \code{return_cascade} and \code{assign_cscd_colors}}
