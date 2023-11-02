@@ -1,9 +1,6 @@
-pandoc: 2.19.2
+pandoc: 3.1.1
 pkgdown: 2.0.7
 pkgdown_sha: ~
 articles: {}
-last_built: 2023-11-02T19:05Z
-urls:
-  reference: https://usaid-oha-si.github.io/cascade/reference
-  article: https://usaid-oha-si.github.io/cascade/articles
+last_built: 2023-11-02T19:28Z
 

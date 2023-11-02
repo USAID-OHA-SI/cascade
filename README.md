@@ -23,7 +23,7 @@ This is a basic example which shows you how to solve a common problem:
 
 ``` r
 library(cascade)
-library(gaglr)
+library(gagglr)
 
 
 # Setup local paths where msds live
