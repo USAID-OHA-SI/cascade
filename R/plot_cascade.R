@@ -171,7 +171,7 @@ plot_cascade <- function(.data, df_annot, cscd_num, p_title, text_scale = 1) {
     ggplot2::facet_wrap(~cascade,
                         scales = "free"
     ) +
-    glitr::si_style_ygrid(text_scale = text_scale)
+    glitr::si_style_ygrid(text_scale = text_scale) +
     ggplot2::labs(
       x = NULL,
       y = NULL,
