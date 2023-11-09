@@ -99,7 +99,7 @@ sum_reshape <- function(.data, ...) {
   .data %>%
     gophr::clean_indicator() %>%
     dplyr::group_by(indicator, fiscal_year, ...) %>%
-    dplyr::summarise(dplyr::across(tidyselect::matches("targ|qtr"), sum, na.rm = T)) %>%
+    dplyr::summarise(dplyr::across(tidyselect::matches("targets|qtr"), sum, na.rm = T)) %>%
     gophr::reshape_msd(direction = "quarters") %>%
     dplyr::ungroup()
 }
