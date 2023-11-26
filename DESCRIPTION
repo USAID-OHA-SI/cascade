@@ -17,7 +17,6 @@ Depends:
 LazyData: true
 Imports:
     dplyr,
-    extrafont,
     forcats,
     ggplot2 (>= 3.3.0),
     glue,
