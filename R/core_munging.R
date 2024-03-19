@@ -10,7 +10,7 @@
 fltr_cascade <- function(.data) {
   df <- .data %>%
     dplyr::filter(
-      indicator %in% gophr::cascade_ind[1:6]
+      indicator %in% gophr::cascade_ind[1:7]
     )
   return(df)
 }
