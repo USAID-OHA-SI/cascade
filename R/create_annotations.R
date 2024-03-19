@@ -16,7 +16,7 @@ create_annotations <- function(df, cscd_df) {
     tidyr::pivot_longer(where(is.double),
       names_to = "period_type"
     ) %>%
-    tidyr::pivot_wider(names_from = indicator) %>%
+    tidyr::pivot_wider(names_from = indicator, values_fn = min) %>%
     dplyr::mutate(
       Linkage = TX_NEW / HTS_TST_POS,
       NNT = round(HTS_TST / HTS_TST_POS, 0),
